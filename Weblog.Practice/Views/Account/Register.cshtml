@@ -1,0 +1,26 @@
+﻿@model User
+
+<form method="post" asp-controller="Account" asp-action="Register">
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label">Username</label>
+        <input asp-for="Username" class="form-control" aria-describedby="emailHelp">
+        <span asp-validation-for="Username"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" class="form-control" >
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Ignore me</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+    <span>@ViewBag.Error</span>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
