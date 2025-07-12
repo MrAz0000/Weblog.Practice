@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string ?ProfileUrl { get; set; }
-        public long ?bio { get; set; }
+        public string ?bio { get; set; }
         public List<string> ?SocialLinks { get; set; }
 
         public int ?UserId { get; set; }
